@@ -4,21 +4,22 @@ cartesian_join_dict = {'name':'Cartesian Join',
                            causing every row from one table to be paired with every row from another.
                            This results in an exponential number of rows, leading to performance issues.
                            to solve this, we'll add an ON clause where possible""",
-                       'prompt': '.'}
+                       'prompt': """You're a SQL query tuning expert. Sometimes people don't add an ON clause in their JOINs.
+                             Change the query logic to use include ON statements in the JOINs without changing the query logic"""}
 
 #union->union all recipe
 union_change_dict = {'name':'Union->Union All',
                      'description':"""UNION ALL is a generaly more performative alternative to the 
                                         regular UNION command, so we will try to improv ethe run time by replacing UNION 
                                         with UNION ALL""",
-                     'prompt': '.'}
+                     'prompt': """optimize this query by Converting UNION to UNION ALL where possible without changing the query logic"""}
 
 
 #not exist->left join recipe
 non_exist_to_left_dict = {'name':"",
                   'description':"""To solve cases of  non-existenet data, we can use LEFT JOIN to eliminate
                                                 the problematic rows from the data and improve the runtime""",
-                  'prompt': """optimize this query by:
+                  'prompt': """optimize this query by
                              -Converting NOT EXISTS to LEFT JOIN with IS NULL check
                              -Maintaining correct NULL handling"""}
 
@@ -31,7 +32,7 @@ cte_pre_agg_dict = {'name':"pre aggregation with CTEs",
 cte_merge_dict = {'name':"CTE merging",
                   'description':""".""",
                   'prompt': """You're a SQL query tuning expert. Sometimes people use too many CTEs.
-                             Change the quey logic to use less CTEs by merging CTEs that can be merge without changing the query logic"""}
+                             Change the query logic to use less CTEs by merging CTEs that can be merged without changing the query logic"""}
 
 #"Magic" recipe
 magic_dict = {'name':"Magic",

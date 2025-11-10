@@ -12,7 +12,11 @@ union_change_dict = {'name':'Union->Union All',
                      'description':"""UNION ALL is a generaly more performative alternative to the 
                                         regular UNION command, so we will try to improv ethe run time by replacing UNION 
                                         with UNION ALL""",
-                     'prompt': """optimize this query by Converting UNION to UNION ALL where possible without changing the query logic"""}
+                     'prompt': """Optimize the Union operations in this query by:
+
+– Converting UNION to UNION ALL where duplicates are impossible
+
+– Optimizing individual queries within the UNION"""}
 
 
 #not exist->left join recipe
@@ -42,6 +46,6 @@ magic_dict = {'name':"Magic",
                          -Converting complex subqueries to efficient join operations
                          -Optimizing JOIN sequences for better performance
                          -Simplifying complex WHERE conditions
-                         -Minimizing data movment between nodes where possible
+                         -Minimizing data movement between nodes where possible
                          -Improving GROUP BY and aggregation patterns
-                         -Avioding SELECT * and listing only needed columns"""}
+                         -Avoiding SELECT * and listing only needed columns"""}

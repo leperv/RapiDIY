@@ -1,1 +1,1 @@
-QUERY_REGEX = r''
+QUERY_REGEX = r'```(?:sql)?\s*([\s\S]*?)\s*```'

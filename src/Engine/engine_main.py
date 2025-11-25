@@ -4,7 +4,7 @@ from ollama import ChatResponse
 response: ChatResponse = chat(model='gemma3:12b', messages=[
   {
     'role': 'user',
-    'content': 'Why is the sky blue?',
+    'content': '',
   },
 ])
 print(response['message']['content'])
